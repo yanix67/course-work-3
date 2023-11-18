@@ -1,16 +1,20 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+from src.utils import load_operation, get_operation_instances, sort_operation_instances
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+def get_executed_operations(operations_instances):
+    pass
 
 
-# Press the green button in the gutter to run the script.
+def main():
+    operations = load_operation("src/data/operations.json")
+    operations_instances = get_operation_instances(operations)
+    executed_operations = get_executed_operations(operations_instances)
+    sorted_operations = sort_operation_instances(executed_operations)
+    five_operations = sorted_operations[:5]
+    for operation in five_operations:
+        print(operation)
+        print()
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    main()
